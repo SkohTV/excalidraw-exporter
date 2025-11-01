@@ -1,0 +1,25 @@
+name: Excalidraw exporter
+description: Exporte .excalidraw files to usable formats (png, svg, ...)
+author: SkohTV
+
+inputs:
+  pattern:
+    description: Excalidraw files 
+    required: true
+
+  chromePath:
+    description: Chrome executable path 
+    required: true
+
+  exportBackground:
+    description: blabla
+    default: true
+
+  exportWithDarkMode:
+    description: blabla
+    default: false
+
+
+runs:
+  using: node20
+  main: dist/index.js

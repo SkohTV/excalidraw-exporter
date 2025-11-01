@@ -1,0 +1,32 @@
+{
+  "name": "excalidraw-exporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "ncc build --source-map --minify",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skohtv/excalidraw-exporter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skohtv/excalidraw-exporter/issues"
+  },
+  "homepage": "https://github.com/skohtv/excalidraw-exporter#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/glob": "^0.5.0",
+    "@vercel/ncc": "^0.38.4",
+    "puppeteer-core": "^24.27.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "rollup": "^4.52.5"
+  }
+}

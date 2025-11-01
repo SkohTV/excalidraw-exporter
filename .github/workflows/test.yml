@@ -1,0 +1,45 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install chrome
+        uses: browser-actions/setup-chrome@v2
+        id: setup-chrome
+
+      - name: Run excalidraw-exporter 
+        uses: ./
+        id: excalidraw-exporter
+        with:
+          pattern: __test__/**/*.excalidraw 
+          chromePath: ${{ steps.setup-chrome.outputs.chrome-path }}
+          exportBackground: true
+          exportWithDarkMode: false
+
+      - name: Upload svgs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: __test__/**/*.svg
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '__test__'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
