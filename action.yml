@@ -1,10 +1,10 @@
 name: Excalidraw exporter
-description: Exporte .excalidraw files to usable formats (png, svg, ...)
+description: Export .excalidraw files to SVG files
 author: SkohTV
 
 inputs:
   pattern:
-    description: Excalidraw files 
+    description: Pattern containing excalidraw files
     required: true
 
   chromePath:
@@ -12,11 +12,13 @@ inputs:
     required: true
 
   exportBackground:
-    description: blabla
+    description: The exported SVGs will have a background
+    required: false
     default: true
 
   exportWithDarkMode:
-    description: blabla
+    description: The exported SVGs will use dark mode theme
+    required: false
     default: false
 
 
