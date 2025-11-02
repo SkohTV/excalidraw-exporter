@@ -28,7 +28,7 @@ jobs:
         id: setup-chrome
 
       - name: Run excalidraw-exporter 
-        uses: ./
+        uses: skohtv/excalidraw-exporter@v1
         with:
           pattern: path/to/**/*.excalidraw 
           chromePath: ${{ steps.setup-chrome.outputs.chrome-path }}
